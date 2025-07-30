@@ -12,7 +12,7 @@ router.get('/', async (req, res) => {
   }
 });
 router.post('/logout', (req, res) => {
-    res.clearCookie('connect.sid'); // or your session cookie name
+    res.clearCookie('connect.sid'); 
     res.status(200).json({ message: 'Logged out successfully' });
   });
 
