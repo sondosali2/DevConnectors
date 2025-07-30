@@ -5,7 +5,6 @@ import jwt from 'jsonwebtoken';
 import User from '../models/User.js';
 import Profile from '../models/Profile.js';
 
-// Register route
 router.post('/register', async (req, res) => {
   const { name, email, password } = req.body;
 

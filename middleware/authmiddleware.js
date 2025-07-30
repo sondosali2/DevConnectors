@@ -10,7 +10,7 @@ const authMiddleware = async (req, res, next) => {
         return res.status(401).json({ msg: 'No token, authorization denied' });
     }
 
-    const token = authHeader.split(" ")[1]; // Extract token from "Bearer <TOKEN>"
+    const token = authHeader.split(" ")[1];
     
     if (!token) {
         return res.status(401).json({ msg: 'Invalid token format' });

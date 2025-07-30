@@ -4,8 +4,8 @@ const ProfileSchema = new mongoose.Schema({
     user: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User',
-        unique: true, // Ensure this is set to true
-        required: true // Ensure user is always required
+        unique: true, 
+        required: true 
     },
     bio: {
         type: String

@@ -1,4 +1,4 @@
-// server.js - Main entry point
+
 import dotenv from 'dotenv';
 import cors from 'cors';
 import connectDB from './config/db.js';
@@ -10,23 +10,19 @@ import express from 'express';
 
 dotenv.config();
 
-// Connect to Database
 connectDB();
 
 const app = express();
 
-// Middleware
 app.use(express.json());
 app.use(cors());
 
 app.use('/api/auth', authRoutes);
-
-
-// Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/users', userRoutes);
 app.use('/api/profile', profileRoutes);
 app.use('/api/posts', postRoutes);
+
 app.all('*', (req, res) => {
   res.status(404).json({ msg: 'Route not found' });
 })
